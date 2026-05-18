@@ -1,4 +1,3 @@
-<p style="line-height: 1.7; color: #555; margin-bottom: 15px;">
-    Fakultas Hukum Universitas Bengkulu hadir sebagai pusat pendidikan tinggi yang berkomitmen mencetak lulusan yang unggul, berintegritas, dan berwawasan global di bidang hukum. Dengan dukungan tenaga pengajar profesional serta kurikulum yang adaptif terhadap perkembangan hukum nasional dan internasional, fakultas ini menjadi pilihan tepat bagi generasi muda yang ingin berkontribusi dalam penegakan keadilan dan supremasi hukum.
-</p>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/University_of_Bengkulu_Main_Building.jpg/1200px-University_of_Bengkulu_Main_Building.jpg" alt="Gedung FH" style="width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+<img src="images/main-images.jpg" alt="Gedung Fakultas Hukum">
+
+<p>Fakultas Hukum Universitas Bengkulu hadir sebagai pusat pendidikan tinggi yang berkomitmen mencetak lulusan yang unggul, berintegritas, dan berwawasan global di bidang hukum. Dengan dukungan tenaga pengajar profesional serta kurikulum yang adaptif terhadap perkembangan hukum nasional dan internasional, fakultas ini menjadi pilihan tepat bagi generasi muda yang ingin berkontribusi dalam penegakan keadilan dan supremasi hukum.</p>
