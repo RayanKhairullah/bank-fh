@@ -16,10 +16,39 @@ if (isset($_SESSION['form_result'])) {
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (!empty($_POST['nomor_rekening']) && !empty($_POST['jumlah'])) {
-        $_SESSION['form_result'] = [
-            'success' => true,
-            'message' => 'Setoran sebesar Rp ' . number_format($_POST['jumlah'], 0, ',', '.') . ' berhasil diproses.'
-        ];
+        $nomrek = $conn->real_escape_string($_POST['nomor_rekening']);
+        $jumlah = (float) $_POST['jumlah'];
+        
+        // Cek rekening
+        $cek = $conn->query("SELECT saldo FROM nasabah WHERE nomor_rekening = '$nomrek'");
+        if ($cek && $cek->num_rows > 0) {
+            $row = $cek->fetch_assoc();
+            $saldo_awal = $row['saldo'];
+            $saldo_akhir = $saldo_awal + $jumlah;
+            
+            $conn->begin_transaction();
+            try {
+                $conn->query("UPDATE nasabah SET saldo = $saldo_akhir WHERE nomor_rekening = '$nomrek'");
+                $conn->query("INSERT INTO transaksi (nomor_rekening, jenis_transaksi, keterangan, jumlah, saldo_akhir) VALUES ('$nomrek', 'Setoran', 'Setoran Tunai', $jumlah, $saldo_akhir)");
+                $conn->commit();
+                
+                $_SESSION['form_result'] = [
+                    'success' => true,
+                    'message' => 'Setoran sebesar Rp ' . number_format($jumlah, 0, ',', '.') . ' berhasil diproses.<br>Saldo akhir: Rp ' . number_format($saldo_akhir, 0, ',', '.')
+                ];
+            } catch (Exception $e) {
+                $conn->rollback();
+                $_SESSION['form_result'] = [
+                    'success' => false,
+                    'message' => 'Terjadi kesalahan sistem: ' . $e->getMessage()
+                ];
+            }
+        } else {
+            $_SESSION['form_result'] = [
+                'success' => false,
+                'message' => 'Nomor Rekening tidak ditemukan!'
+            ];
+        }
     } else {
         $_SESSION['form_result'] = [
             'success' => false,

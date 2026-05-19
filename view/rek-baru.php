@@ -53,11 +53,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     'message' => 'Usia minimal untuk membuat rekening adalah 16 tahun!'
                 ];
             } else {
-                // Simulasi penyimpanan data ke database
-                $_SESSION['form_result'] = [
-                    'success' => true,
-                    'message' => 'Rekening baru berhasil dibuat! Nomor rekening Anda: ' . str_pad(rand(1, 999999), 10, '0', STR_PAD_LEFT)
-                ];
+                $nomrek = $conn->real_escape_string($_POST['nomor_rekening']);
+                $nama = $conn->real_escape_string($_POST['nama_nasabah']);
+                $nik = $conn->real_escape_string($_POST['nomor_identitas']);
+                $jk = $conn->real_escape_string($_POST['jenis_kelamin']);
+                $tgl_lahir = $conn->real_escape_string($_POST['tanggal_lahir']);
+                $alamat = $conn->real_escape_string($_POST['alamat']);
+                $telp = $conn->real_escape_string($_POST['nomor_telepon']);
+                $pekerjaan = $conn->real_escape_string($_POST['pekerjaan']);
+                
+                $sql = "INSERT INTO nasabah (nomor_rekening, nama_nasabah, nomor_identitas, jenis_kelamin, tanggal_lahir, alamat, nomor_telepon, pekerjaan) 
+                        VALUES ('$nomrek', '$nama', '$nik', '$jk', '$tgl_lahir', '$alamat', '$telp', '$pekerjaan')";
+                
+                if ($conn->query($sql)) {
+                    $_SESSION['form_result'] = [
+                        'success' => true,
+                        'message' => 'Rekening baru berhasil dibuat! Nomor rekening Anda: ' . $nomrek
+                    ];
+                } else {
+                    $_SESSION['form_result'] = [
+                        'success' => false,
+                        'message' => 'Gagal menyimpan ke database: ' . $conn->error
+                    ];
+                }
             }
         }
     } else {
