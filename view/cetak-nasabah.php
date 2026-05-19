@@ -20,38 +20,24 @@
         <tbody>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 12px;">RK202405101001</td>
-                <td style="padding: 12px;">Andi Suryanto</td>
-                <td style="padding: 12px;">L</td>
-                <td style="padding: 12px;">081234567890</td>
+                <td style="padding: 12px;">Ulnaya Bilatus Shita</td>
+                <td style="padding: 12px;">P</td>
+                <td style="padding: 12px;">083152803199</td>
                 <td style="padding: 12px; text-align: right;">2,500,000</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 12px;">RK202405112304</td>
-                <td style="padding: 12px;">Budi Prakoso</td>
-                <td style="padding: 12px;">L</td>
-                <td style="padding: 12px;">085612345678</td>
+                <td style="padding: 12px;">Davina Tasya Alifya</td>
+                <td style="padding: 12px;">P</td>
+                <td style="padding: 12px;">0895385260012</td>
                 <td style="padding: 12px; text-align: right;">1,250,000</td>
             </tr>
             <tr style="border-bottom: 1px solid #eee;">
                 <td style="padding: 12px;">RK202405121122</td>
-                <td style="padding: 12px;">Citra Kirana</td>
+                <td style="padding: 12px;">Tisatryann</td>
                 <td style="padding: 12px;">P</td>
-                <td style="padding: 12px;">089912345678</td>
+                <td style="padding: 12px;">089603790233</td>
                 <td style="padding: 12px; text-align: right;">5,750,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px;">RK202405139988</td>
-                <td style="padding: 12px;">Dewi Lestari</td>
-                <td style="padding: 12px;">P</td>
-                <td style="padding: 12px;">087812345678</td>
-                <td style="padding: 12px; text-align: right;">750,000</td>
-            </tr>
-            <tr style="border-bottom: 1px solid #eee;">
-                <td style="padding: 12px;">RK202405147766</td>
-                <td style="padding: 12px;">Eko Prasetyo</td>
-                <td style="padding: 12px;">L</td>
-                <td style="padding: 12px;">081112345678</td>
-                <td style="padding: 12px; text-align: right;">10,000,000</td>
             </tr>
         </tbody>
     </table>
