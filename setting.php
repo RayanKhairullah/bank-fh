@@ -23,7 +23,13 @@ $view_file = "view/{$file}";
 // Tentukan judul halaman
 $titles = [
     'home' => 'Selamat datang',
-    'baru' => 'Tambah Rekening Baru'
+    'baru' => 'Tambah Rekening Baru',
+    'cetak-nasabah' => 'Daftar Nasabah',
+    'saldo' => 'Cek Saldo',
+    'setoran' => 'Setor Tunai',
+    'penarikan' => 'Tarik Tunai',
+    'transfer' => 'Transfer Antar Rekening',
+    'riwayat' => 'Riwayat Transaksi'
 ];
-$view_title = $titles[$page] ?? ucfirst($page);
+$view_title = $titles[$page] ?? ucfirst(str_replace('-', ' ', $page));
 ?>
